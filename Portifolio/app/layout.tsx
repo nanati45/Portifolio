@@ -1,3 +1,6 @@
+import SideBar from "./components/SideBar";
+import "./globals.css";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -5,7 +8,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="flex">
+        <SideBar />
+
+        <div className="flex-grow ">{children}</div>
+      </body>
     </html>
   );
 }
